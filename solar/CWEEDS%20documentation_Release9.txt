@@ -1,0 +1,1494 @@
+
+                               CANADIAN WEATHER
+                            ENERGY AND ENGINEERING
+                                  DATA SETS
+                                (CWEEDS FILES)
+
+                                     and
+
+                               CANADIAN WEATHER
+                           FOR ENERGY CALCULATIONS
+                                 (CWEC FILES)
+
+                              UPDATED USER'S MANUAL
+                                
+                                 -------------
+
+                       prepared under the direction of
+             ENVIRONMENT CANADA - ATMOSPHERIC ENVIRONMENT SERVICE (AES)
+           [Currently known as the Meteorological Service of Canada (MSC)]
+                       and THE NATIONAL RESEARCH COUNCIL OF CANADA
+
+                          Revised on October 23, 2008
+
+                                 *************
+
+
+                                Table of contents
+
+1 Introduction
+2 Characteristics of the Weather Elements
+3 How to Access and Use the CWEEDS Files
+4 Canadian Weather for Energy Calculations (CWEC) Files
+5 Acknowledgements
+
+APPENDIX A - WYEC2 Format
+APPENDIX B - List of locations provided on the AES CWEEDS CD-ROM's.
+APPENDIX C - CORRESPONDANCE WBAN NUMBER / STATION NAME
+APPENDIX D - AVAILABLE CWEC FILES
+APPENDIX E - MONTHS SELECTED BY CWEC WEATHER DATA ANALYSIS
+
+                                *************
+
+1 Introduction
+
+1.1 What are the CWEEDS files?
+
+The CWEEDS files are computer data sets of hourly weather conditions occurring
+at 145 Canadian locations for up to 48 years of record, starting as early as
+1953, and ending for most locations in 2001. The primary purpose of these files
+is to provide long term weather records for use in urban planning, siting and
+design of wind and solar renewable energy systems, and design of energy
+efficient buildings. The general nature of the files, however, results in their
+widespread applicability to any sector which is weather-sensitive, such as
+transportation, air quality, agriculture, forestry, tourism, structural design,
+or general interest.
+
+Users will likely find most value in providing the files as input into other
+software that processes the observational data in some way that provides more
+specific information germane to the user's requirements. For example, the
+information in the CWEEDS files can be used as input to design software that
+simulates building or solar energy system performance on an hourly basis. Other
+possibilities include the calculation of summary statistics regarding the wind
+energy potential at a location, or finding the means, variability, extremes, or
+frequency of other weather conditions or combination of conditions specifically
+tailored to suit an application.
+
+There is virtually no limit to the variety of useful analyses that can be
+performed with the data in the CWEEDS files. The user will, however, need to
+provide the software which will perform any additional analyses. Importing the
+data into a spreadsheet or data base program is a common way in which further
+analysis may be performed.
+
+The CWEEDS CD-ROMs and disk only include compressed, formatted files of
+observed and estimated weather observations, utility software to uncompress and
+copy the files from the CD-ROMs, and documentation to explain the development,
+content, and format of the files.
+
+Most of the 21 weather elements such as temperature and wind speed have been
+abstracted directly from the National Digital Climate Archives maintained by
+the Atmospheric Environment Service (AES) of Environment Canada in Downsview,
+Ontario. Nine of the weather elements relate to solar irradiance amounts and
+have been estimated for each hour for those elements and locations for which
+observations are not available.
+
+The computer data sets are arranged so that one year of weather data for one
+location is contained in one file about one megabyte in size in the
+uncompressed, WYEC2 format described below. There are 48 files, for instance,
+totalling over 48 megabytes disk space in WYEC2 format for the full 1953-2001
+CWEEDS period of record. In total, the full CWEEDS 4500 files comprise a little
+over 4.5 gigabytes. 
+
+A second set of files, called CWEC (Canadian Weather year for Energy
+Calculation), has been provided for convenience for a limited number of the
+locations. These files are described in Section 4.
+
+1.2 Copyright and licensing information
+
+PKUNZIP.EXE is licensed from PKWARE, Inc., by Environment Canada for the
+purpose of allowing the purchaser of the CWEEDS CD-ROMs to uncompress the
+CWEEDS files and make copies in the WYEC2 format on a floppy or hard disk. The
+remaining programs, files, and documentation on the CWEEDS CD-ROMs and floppy
+disk are copyrighted by Environment Canada. Normal copyright restrictions
+apply. Neither the compressed files, nor the uncompressed files once they have
+been extracted from the CD-ROM, may be reproduced, except for backup purposes,
+without the permission of Environment Canada.
+
+1.3 The background of the CWEEDS files
+
+Climatic information related to solar irradiance for building and solar energy
+systems was provided by the 1985 Environment Canada publication Solar Radiation
+Data Analyses for Canada 1967-1976 (Volumes 1-6, Environment Canada, 1985). The
+increasing power, storage capacity, and cost-effectiveness of personal
+computers, accompanied by the sophistication of software used for building and
+energy system design has led to the requirement for ready access to long term
+hourly weather data sets. Environment Canada consulted with the user community
+in making decisions about the format and media used and obtained funding
+support from the Government of Canada Federal Panel on Energy Research and
+Development (PERD) to produce the CWEEDS files.
+
+1.4 The format used for the CWEEDS files
+
+The WYEC2 data format and units, described in Appendix A, was adopted for the
+CWEEDS files. WYEC2 (Weather Year for Energy Calculation, Version 2) has been
+devised by the American Society of Heating, Refrigerating, and Air-Conditioning
+Engineers (ASHRAE) for providing WYEC2 data files for 76 cities including 5 in
+Canada (scheduled for release in June 1993). ASHRAE adapted the WYEC2 format
+from the TMY (Typical Meteorological Year) file format developed by Sandia
+National Laboratories in the US in the late 1970's.
+
+The WYEC2 format is significantly different from the file format and
+organization of hourly data used by the AES internally in the National Digital
+Climate Archives. Users who have obtained hourly weather observations from AES
+previously should note the differences outlined below. For emphasis, the
+different aspects of the AES format are presented in italics.
+
+          One record of the WYEC2 file format contains all the weather elements
+          for one hour. Thus there is one record, comprising of the station
+          identification, date-time stamp, and 21 observational elements and
+          data flags, for each hour. (Note that this is different from the AES
+          file format, in which each record contains all 24 hours of a given
+          observational element for each day.)
+
+          Hour "1" of the WYEC2 format is 1:00 AM and hour "24" is midnight,
+          local standard time, including solar irradiance and minutes of
+          sunshine. (In the AES format, the hours for a day range from midnight
+          to 23:00 [11 PM]. The hours for all the AES elements are local
+          standard time except for hourly solar irradiance amounts and minutes
+          of sunshine which are referenced to local apparent [solar] time.)
+
+
+2 Characteristics of the Weather Elements
+
+The units, field number, data and flag positions, and the meanings of
+alphanumeric data and flags are presented in Appendix A. Additional
+clarification for some fields,such as how they were observed, estimated or
+modelled, or abstracted from the AES Climate Archives, appears below. In some
+cases, comments as to the representativeness of the observed values are
+provided as guidance to the user.
+
+WBAN (field 001) number is an 5-character station identification number used in
+the WYEC2 format. It originated in the US and WBAN numbers were assigned to
+Canadian locations until recently. For locations for which no WBAN number has
+been officially assigned, an artificial identifier has been provided. These
+"unofficial WBAN" numbers all start with the characters "CAN". For those files
+in which the location for solar irradiance measurements is different from the
+location where the other hourly elements are observed (see discussion on solar
+irradiance, below), the WBAN number corresponds to the station at which solar
+irradiance is observed.
+
+Solar global horizontal irradiance (field 102) observations are available for
+some of the period of record for 35 of the 143 CWEEDS locations. At 21 of the
+locations the solar irradiance observation site is coincident with the hourly
+weather observing site for part of the period of record. At the other 14
+locations, the solar irradiance amounts were observed at a different AES
+observing site generally within 40 km of the hourly weather observing site.
+Appendix B provides the AES station number for the hourly weather observing
+site (WX.CSN) and the station number for the solar irradiance observing site
+(RAD.CSN).
+
+The solar irradiance observations in the AES Climate Archives are referenced to
+local apparent (solar) time. The values were adjusted to local standard time
+for inclusion in the CWEEDS files by means of an algorithm developed by Perez
+(Morris et al., 1992;  Perez et al., 1990).
+
+The MAC3 model was used to estimate solar global horizontal irradiance for the
+108 locations and times for which observations were unavailable (Davies et al.,
+1984; Environment Canada, 1985). Solar irradiance was estimated for some hours
+by the WON statistical model or linear interpolation when the MAC3 model
+failed, particularily when it could not be used due to missing cloud
+observations. The data flag with each field indicates whether the solar
+irradiance amount is observed or modelled. It is important to note that the
+modelling errors can be substantial for any given hour. The root-mean-square
+error for hourly solar global horizontal irradiance amounts are typically
+around 30% (Morris and Skinner, 1990). The long term average error however is
+5% or lower. Thus it is unadvisable to use the modelled irradiance amounts if
+it is important to know the amount for a particular hour of a particular day.
+
+A further note of caution: if the location of the solar irradiance observing
+site is different from the hourly weather observing site, then any given hourly
+irradiance amount may not be consistent with the cloud amount or opacity
+observations.
+
+Direct normal irradiance (field 103) was estimated from the solar global
+horizontal irradiance using the MAC3 model for locations and hours for which
+observations of global solar horizontal irradiance were unavailable. An
+algorithm developed by Perez (Perez et al., 1990 and 1991, Morris et al., 1992)
+was used if the hourly observed global solar horizontal irradiance was
+available.
+
+Diffuse horizontal irradiance (field 104) is observed at 5 locations. For other
+locations this element was estimated by the MAC3 model when the observations of
+the global solar horizontal irradiance was unavailable. An algorithm developed
+by Perez (Perez et al., 1991, Morris et al., 1992) was used if the hourly
+observed global solar horizontal irradiance was available.
+
+Global horizontal illuminance (field 105), direct normal illuminance (field
+106), and diffuse horizontal illuminance (field 107) were all modelled using an
+algorithm developed by McCluney (McCluney, 1984; McArthur, 1990; Morris and
+Skinner, 1990).
+
+No estimates are available of the zenith illuminance (field 108). This field is
+always missing.
+
+Minutes of sunshine (field 110), where observations are available are
+abstracted from the AES Climate Archives with adjustments made to convert the
+time base from local apparent (solar) time to local standard time. No values
+are estimated if observations are unavailable.
+
+The units of Wind speed (field 209) observations are 0.1 m/s. Wind speed is
+provided in km/h in the AES Climate Archives. The observation is an estimate of
+the one-minute mean wind speed on each hour for the years before 1985 and a
+two-minute mean wind speed thereafter. Care is required in assuming wind speed
+and direction representativeness at nearby locations. Wind speed is sensitive
+to the height above ground and exposure of the anemometer.
+
+Most of the anemometers at the locations in the CWEEDS files are mounted at 10m
+above ground in a flat, open exposure such as at airport locations. AES
+anemometers have not always been mounted at 10m above ground, especially before
+1975. Information in the file AHISTORY.TXT provides a copy of anemometer height
+above ground for users interested in adjusting the wind speed to another height
+above ground. In general, significant caution is advisable in using wind speeds
+before 1975.  Not only were the anemometers installed at heights other than 10m
+above ground more frequently before 1975 than after, but the station history
+files are often ambiguous as to anemometer height and location. The information
+provided in AHISTORY.TXT for some locations is an interpretation of conflicting
+or incomplete information in the AES station information files. Other
+non-standard anemometer locations, such as on top of aircraft hangers or the
+air traffic control tower, also occurred at some locations, mainly before 1975.
+
+Anemometer exposure is also problematic. Most anemometers are located in a
+flat, open exposure, especially at major airports. However, some anemometers
+are located in more exposed locations, such as Cape St. James, BC, which is on
+an exposed headland on the open coast. Observed wind speeds are not
+representative of less windy, inland locations, or even other coastal sites not
+on an exposed headland. Other locations, such as Fort Simpson, NWT, are
+sheltered by trees, and not representative of nearby, more exposed locations.
+In general, wind speeds form observing sites are only representative of other
+nearby sites if the height above ground and exposures are similar.
+
+Snow cover (field 212) is derived from daily snow depth observations. It is
+provided as a guide to estimating the surface albedo (reflectance) for
+calculations involving solar irradiance or natural illuminance on
+non-horizontal surfaces.  Typical albedo values range from 0.2 for grass or
+gravel surfaces to 0.6 for snow surfaces. Freshly fallen snow may have an
+albedo value as high as 0.8.
+
+
+3 How to Access and Use the CWEEDS Files
+
+CD-ROM disk 1 provides CWEEDS files for Ontario, Quebec, Nova Scotia, New
+Brunswick, Prince Edward Island, and Newfoundland. CD-ROM 2 contains the files
+for BC, Alberta, Saskatchewan, Manitoba, the Yukon and the Northwest
+Territories. The files for each province or territory are located in
+subdirectory named accordingly. The files for each location are located in a
+subdirectory named with the WBAN number. There is one file for each year for
+each location.
+
+The names of the provincial and territorial subdirectories are ONT, QUE, NB,
+NS, PEI, NFLD, BC, ALTA, SASK, MAN, YT, and NWT. The format of the names of the
+location subdirectories is WxxxxxW, where xxxxx is the WBAN number of the
+station. The names of the CWEEDS files themselves are WxxxxxW.Ynn, where xxxxx
+is the WBAN number and nn is the last two characters in the year. Thus
+BC\W94116W\W94116W.Y89 is the file for Penticton, BC, for 1989.
+
+The files on the CD-ROM have been compressed using WINZIP.
+
+
+4 Canadian Weather for Energy Calculations (CWEC) Files
+
+The Canadian Weather for Energy Calculations (CWEC) files have been developped
+under the auspices of the National Research Council of Canada. They are derived
+using statistical criteria from long-term series of CWEEDS files.
+
+The CWEC files are created by concatenating twelve Typical Meteorological
+Months selected from a database of, in most cases, 30 years of CWEEDS data. The
+method is similar to TMY procedure developed in the eighties by Sandia
+Laboratories. The months are chosen by statistically comparing individual
+monthly with long-term monthly means for daily total global radiation, mean,
+minimum and maximum dry bulb temperature, mean, minimum and maximum dew point
+temperature, and mean and maximum wind speed. The composite index used to
+select the most 'typical' months uses the following weights (in %)
+
+
+
+Parameter   Dry    Dry    Dry     Dew     Dew     Dew    Wind    Wind   Daily
+            Bulb   Bulb   Bulb   Point   Point   Point   Speed   Speed  Solar
+            Max    Min    Mean    Max     Min    Mean     Max    Mean    Rad.
+
+Weight       5      5      30     2.5     2.5      5       5       5      40
+
+
+
+Additional consideration is given, in the selection process, to the statistics
+and persistence structures of the daily mean dry bulb temperature and daily
+total radiation. A complete description of the procedure used can be found in:
+D.L. Siurna, L.J. D'Andrea, K.G.T. Hollands, A Canadian Representative
+Meteorological Year for Solar System Simulation, Proceedings of the 10th annual
+conference of the Solar Energy Society of Canada (SESCI '84), August 2-6, 1984,
+Calgary, Alberta, Canada.
+
+In the CWEC files, no missing values will be found in the following fields:
+extraterrestrial irradiance (101), global horizontal irradiance (102), direct
+normal irradiance (103), diffuse horizontal irradiance (104), weather (204),
+station pressure (205), dry bulb temperature (206), dew point temperature
+(207), wind direction (208), wind speed (209), total sky cover (210), opaque
+sky cover (211), snow cover (212).
+
+The list of all available CWEC files is given in Appendix D. The years from
+which the CWEC typical months were chosen are listed in Appendix E.
+
+
+5 Acknowledgements
+
+Most of the work in the compilation of the CWEEDS files was performed by the
+Watsun Simulation Laboratory at the University of Waterloo under contract to
+Environment Canada with funding provided by the Canadian Federal Panel on
+Energy Research and Development.
+
+Project direction was provided at Environment Canada by the Energy and
+Industrial Adaptation Division of the Canadian Climate Centre. Programming,
+file processing and drafting support was provided by the Climate Information
+Branch.
+
+
+6 References
+
+Davies, J.A., M. Abdel-Wahab, and D.C. McKay, 1984: Estimating Solar
+Irradiation on Horizontal Surfaces. Int. J. Solar Energy, Vol. 2, pp. 405-424.
+
+Environment Canada, 1985: Solar Radiation Analyses for Canada 1967-1976.
+Volumes 1-6. Environment Canada, Canadian Climate Centre,  4905 Dufferin
+Street, Downsview, Ontario, M3H 5T4.
+
+McArthur, B.J., 1990: A Review of Illumination Modelling with Application to
+Canadian Requirements. Contractor's report to the Atmospheric Environment
+Service. Environment Canada, 4905 Dufferin Street, Downsview, Ontario, M3H 5T4.
+
+McCluney, R., 1984: SKYSIZE - a simple procedure for sizing skylights based on
+statistical illumination performance. Energy and Buildings, Vol. 6, pp.
+213-219.
+
+Morris, R.J., A.P. Brunger, and D. Thevenard, 1992: A Solar Building Energy
+Digital Resource Atlas For Canada. 18th Annual Conference of the Solar Energy
+Society of Canada; July 4-8, 1992, Edmonton, Alberta; pp 123-128.
+
+Perez, R., P. Ineichem, E. Maxwell, R. Seals, and A. Zelenka, 1990: Making full
+use of the clearness index for parameterizing hourly insolation conditions.
+Solar Energy, Vol. 45, No. 2, pp. 111-114.
+
+Perez, R., P. Ineichem, E. Maxwell, R. Seals, and A. Zelenka, 1991: Dynamic
+models for hourly global to direct irradiance conversion. Proceedings of the
+1991 Biennial Congress of the International Solar Energy Society, Denver,
+Colorado, USA, August 19-23, 1991, pp. 951-956.
+
+
+APPENDIX A - WYEC2 Format
+
+Weather files in WYEC2 format consist of 8760 identical fixed format records
+(8784 records for leap years), one for each hour of each day of the year. Each
+record is 116 characters in length and is organized according to the table
+below. The flags associated with the data are described in the next section of
+the document.
+
+All WYEC2 values are for Local Standard Time. Irradiance and illuminance fields
+contain data integrated over the hour, meteorological fields contain
+observations made at the end of the hour. For example, hour 12 contains
+irradiance/illuminance integrated from 11-12 and meteorological observations
+made at 12.
+
+A file containing statistics about the WYEC2 file is assembled (number of
+missing records for each element and each year, yearly max and mean values of 
+each element). The name of the file is xxxxx.STT, where xxxxx is the WBAN Station
+Number.
+
+A file containing statistics about the radiation data is assembled. For this file
+the year is divided into four periods centered around March 21 ("spring"), June 21
+("summer"), September 21 ("autumn") and December 21 ("winter"). For each trimester
+the max and mean of global irradiance, diffuse irradiance and direct irradiance 
+are computed for each hour of the day. The file contains a summary with five 
+columns: element, trimester, hour, max value and min value. The name of the file is
+xxxxx.STR, where xxxxx is the WBAN Station Number. The easiest way to exploit the
+the information contained in this file is to retrieve it in a spreadsheet and plot
+the various daily profiles.  A visual inspection will then reveal if there is any 
+major problem with the radiation data that were modelled.
+
+Important note: CWEC files have always 8760 records. If the selected February
+month is from a leap year, it is truncated to 28 days.
+
+
+Field   Data       Flag       Data element and description
+Number  Positions  Position   Comments and warnings
+
+001     001-005    --         WBAN station identification number
+
+                              Unique alpha-numerical five-character string to
+                              identify each station.
+
+002     006-006    --         File source code
+
+                              A= AES Digital Archive of Canadian Climatological
+                              Data identified by element.
+                              B= Canadian Reference Year for Energy
+                              Calculations (CWEC) file derived from a
+                              compilation of the above.
+
+003     007-016    --         Time, Yr Mo Day Hr (Yr 4 chars, Mo Day Hr 2 chars each)
+
+                              Mo is 1 to 12.
+                              Day is 1 to month length (28, 29, 30 or 31).
+                              Hr is 1 to 24.
+
+                              1984051203 = 12 May 1984, 3 o'clock.
+
+101     017-020    --         Extraterrestrial irradiance, kJ/m2
+
+                              Amount of solar energy received at top of
+                              atmosphere during solar hour ending at time
+                              indicated in field 003, based on solar constant
+                              of 1367 W/m2. Nighttime values are shown as 0.
+
+
+
+102     021-024    025-026   Global horizontal irradiance, kJ/m2
+
+                              Total of direct and diffuse radiant energy
+                              received on a horizontal surface by a pyranometer
+                              during the hour ending at the time indicated in
+                              field 003.
+
+                              The values given in this field have been
+                              interpolated from Local Apparent Time to Local
+                              Standard Time but this is not reflected in the
+                              flags ("observed" values with a flag equal to
+                              blank are actually interpolated values).
+
+103     027-030    031-032    Direct normal irradiance, kJ/m2
+
+                              Portion of the radiant energy received by a
+                              pyranometer directly from the sun during the hour
+                              ending at the time indicated in field 003.
+
+104     033-036    037-038    Diffuse horizontal irradiance, kJ/m2
+
+                              Portion of the radiant energy received on a
+                              horizontal surface by a pyranometer indirectly
+                              from the sky during the hour ending at the time
+                              indicated in field 003.
+
+                              The values given in this field have been
+                              interpolated from Local Apparent Time to Local
+                              Standard Time but this is not reflected in the
+                              flags ("observed" values with a flag equal to
+                              blank are actually interpolated values).
+
+105     039-042    043        Global horizontal illuminance, 100 lux
+
+                              1056 = 105.6 klux
+
+106     044-047    048        Direct normal illuminance, 100 lux
+
+                              1056 = 105.6 klux
+
+107     049-052    053        Diffuse horizontal illuminance, 100 lux
+
+                              1056 = 105.6 klux
+
+108     054-057    058        Zenith luminance, 100 Cd/m2
+
+                              Not available, always missing.
+
+110     059-060    061        Minutes of sunshine, 0-60 minutes
+
+                              The values given in this field have been
+                              interpolated from Local Apparent Time to Local
+                              Standard Time but this is not reflected in the
+                              flags ("observed" values with a flag equal to
+                              blank are actually interpolated values).
+
+201     062-065    066        Ceiling height, 10 m
+
+                              0000-3000 = 0 to 30,000 m
+                              7777 = unlimited; clear
+
+202     067-070    071        Sky condition
+
+                              Coded by layer in ascending order; four layers
+                              are described; if less than four layers are
+                              present the remaining positions are coded 0. The
+                              code for each layer is:
+
+
+                                  0 = Clear (less than 0.1 cover)
+                                  1 = Thin scattered
+                                  2 = Opaque scattered (0.1-0.5 cover)
+                                  3 = Thin broken
+                                  4 = Opaque broken (0.6-0.9 cover)
+                                  5 = Thin overcast
+                                  6 = Opaque overcast (1.0 cover)
+                                  7 = Obscuration
+                                  8 = Partial obscuration
+
+
+                              The flag is left as '9' only if all four layers
+                              are missing. It is written as 'E' if at least
+                              one of the layer has the flag 'E'.
+
+203     072-075    076        Visibility, 100 m
+
+                              120 = 12 km
+
+204     077-084    085        Weather
+
+                              Eight single digit codes as explained below.
+
+204a    077                   Occurrence of thunderstorm, tornado or squall.
+
+
+                                  0 = None
+                                  1 = Thunderstorm - lightning and thunder.
+                                  Wind gusts less than 50 knots, and hail, if
+                                  any, less than 3/4 inch diameter.
+                                  2 = Heavy or severe thunderstorm - frequent
+                                  intense lightning and thunder. Wind gusts 50
+                                  knots or greater and hail, if any, 3/4 inch
+                                  or greater diameter.
+                                  3 = Report of tornado, funnel cloud or
+                                  waterspout.
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported.
+
+204b    078                   Occurrence of rain, rain showers or freezing rain
+
+
+                                  0 = None
+                                  1 = Light rain
+                                  2 = Moderate rain
+                                  3 = Heavy rain
+                                  4 = Light rain showers
+                                  5 = Moderate rain showers
+                                  6 = Heavy rain showers
+                                  7 = Light freezing rain
+                                  8 = Moderate or heavy freezing rain
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported.
+
+204c    079                   Occurrence of drizzle, freezing drizzle
+
+
+                                  0 = None
+                                  1 = Light drizzle
+                                  2 = Moderate drizzle
+                                  3 = Heavy drizzle
+                                  4 = Light freezing drizzle
+                                  5 = Moderate freezing drizzle
+                                  6 = Heavy freezing drizzle
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported.
+
+204d    080                   Occurrence of snow, snow pellets or ice crystals
+
+
+                                  0 = None
+                                  1 = Light snow
+                                  2 = Moderate snow
+                                  3 = Heavy snow
+                                  4 = Light snow pellets
+                                  5 = Moderate snow pellets
+                                  6 = Heavy snow pellets
+                                  7 = Light ice crystals
+                                  8 = Moderate ice crystals
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported, except for the
+                              values 1,2,3 which are reported before any other.
+
+204e    081                   Occurrence of snow showers or snow grains
+
+
+                                  0 = None
+                                  1 = Light snow showers
+                                  2 = Moderate snow showers
+                                  3 = Heavy snow showers
+                                  4 = Light snow grains
+                                  5 = Moderate snow grains
+                                  6 = Heavy snow grains
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported, except for the
+                              values 1,2,3 which are the first ones to be
+                              reported.
+
+204f    082                   Occurrence of ice pellets, ice pellet showers, or
+                              hail
+
+
+                                  0 = None
+                                  1 = Light ice pellets
+                                  2 = Moderate ice pellets
+                                  3 = Heavy ice pellets
+                                  4 = Light hail
+                                  5 = Moderate hail
+                                  6 = Heavy hail
+                                  7 = Light ice pellet showers
+                                  8 = Moderate or heavy ice pellet showers
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported.
+
+204g    083                   Occurrence of fog, blowing dust or blowing sand
+
+
+                                  0 = None
+                                  1 = Fog
+                                  2 = Ice fog
+                                  4 = Blowing dust
+                                  5 = Blowing sand
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported.
+
+204h    084                   Occurrence of smoke, haze, dust, blowing snow or
+                              blowing spray
+
+
+                                  0 = None
+                                  1 = Smoke
+                                  2 = Haze
+                                  3 = Smoke and haze
+                                  4 = Dust
+                                  5 = Blowing snow
+
+
+                              If several phenomena occur simultaneously, the
+                              highest WYEC2 value is reported.
+
+205     086-090    091        Station pressure, 10 Pa
+
+                              Pressure at station level
+
+                              10150 = 101.5 kPa
+
+206     092-095    096        Dry bulb temperature, 0.1 °C
+
+                              -152 = -15.2 °C
+
+207     097-100    101        Dew point temperature, 0.1 °C
+
+                              -152 = -15.2 °C
+
+208     102-104    105        Wind direction, 0-359 degrees
+
+                              0 = north
+
+209     106-109    110        Wind speed, 0.1 m/s
+
+                              Wind speed and wind direction both 0 indicates
+                              calm.
+
+                              350 = 35.0 m/s
+
+210     111-112    113        Total sky cover, 0-10 in tenths
+
+                              Amount of celestial dome in tenths covered by
+                              clouds or obscuring phenomena.
+
+211     114-115    116        Opaque sky cover, 0-10 in tenths
+
+                              Amount of celestial dome in tenths covered by
+                              clouds or obscuration through which the sky
+                              and/or higher cloud layers cannot be seen.
+
+212     117        118        Snow cover
+
+                                  0 = no snow or a trace of snow
+                                  1 = indicates more than a trace on snow on
+                                  the ground
+
+
+Flags
+
+Flag characters indicate if the associated value is missing, was estimated or
+modelled or actually observed. Some fields have no flag, others have 1 or 2
+character flags as follows:
+
+      Field        Flag type / comment
+
+      001-003      None (record identification fields)
+
+      101          None (calculated extraterrestrial irradiance is always
+                   present)
+
+      102-104      2 character (irradiance values)
+
+      105-212      1 character (all remaining fields)
+
+
+1. One character flags. The following flags are used:
+
+         blank     Value was observed (that is, not derived with a model and
+                   not altered).
+                   Exception: irradiance and minutes of sunshine flags are
+                   written as blank though they are interpolated to change the
+                   time base from local apparent to local standard time.
+
+           A       Value has been algorithmically adjusted (e.g. some values in
+                   Canadian Reference Years are smoothed at the beginning and
+                   end of months).
+
+           E       Value was missing and has been replaced by a hand estimate.
+
+           I       Value was missing and has been replaced with one derived by
+                   interpolation from neighboring observations.
+
+           M       Value was missing and has been replaced with one derived
+                   with a model (model used depends on element).
+
+           Q       Value is derived from other values (e.g. illuminance data
+                   which are not observed).
+
+           9       Value is missing; data positions contain 9s as well.
+
+2. Two character flags for radiation values (on WYEC2 irradiance fields 102,
+103 and 104), are a 1 character flag (as defined above) followed by a blank.
+
+ 
+
+APPENDIX B - List of locations provided on the AES CWEEDS CD-ROM's.
+
+STATION    is the name of the AES station corresponding to the RAD.CSN.
+
+RAD.CSN    is the Canadian Station Number, an identification number assigned
+           and used by AES, of the site where solar radiation is observed (it
+           is not always the same site as where the other hourly observations
+           are taken).
+
+WX.CSN     is the Canadian Station Number, an identification number assigned
+           and used by AES, of the site where the hourly observations other
+           that solar irradiance and minutes of sunshine are taken.
+
+LAT        is the latitude (°) of the site corresponding to RAD.CSN.
+
+LONG       is the longitude (°) of the site corresponding to RAD.CSN.
+
+MLONG      is the prime meridian (°) upon which the time zone is based. The
+           difference in hours between Local Standard Time (LST) and
+           Coordinated Universal Time (CUT) can obtained by the calculation LST
+           = CUT - MLONG/15. For instance, if MLONG is 75°, and CUT is 11:00
+           then LST is 06:00.
+
+SUN        indicates the source of the minutes of sunshine, if available. W
+           indicates that the observations are from the site corresponding to
+           WX.CSN. R indicates RAD.CSN. A blank means no observations of
+           minutes of bright sunshine are available.
+
+RAD        indicates by an R whether solar irradiance observations are
+           available. A blank indicates no observations and all the irradiance
+           fields are modelled.
+
+FY         is the last two digits of the first year provided on the CWEEDS
+           CD-ROM (i.e. 53 means 1953).
+
+LY         is the last two digits of the last year on the CD-ROM.
+
+
+
+STATION                 WBAN  RAD.CSN WX.CSN  LAT   LONG   MLONG  SUN RAD FY LY
+
+ALBERTA
+
+CALGARY INT'L. A        25110 3031093 3031093 51.10 114.02 105.00  W      53 05
+COLD LAKE A             25129 3081680 3081680 54.42 110.28 105.00  W      54 05
+CORONATION              25113 3011880 3011880 52.10 111.45 105.00  W      53 94
+COWLEY A                CAN43 3031920 3031920 49.63 114.08 105.00         53 59
+EDMONTON INT'L. A       25142 3012205 3012205 53.32 113.58 105.00  W      61 05
+EDMONTON MUNICIPAL A    CAN98 3012208 3012208 53.57 113.52 105.00  W      53 04
+EDMONTON NAMAO          CANA6 3012210 3012210 53.67 113.47 105.00         56 94
+EDMONTON STONY PLAIN    25145 301222F 3012205 53.55 114.10 105.00  W   R  61 05
+EDSON                   CAN46 3062241 3062241 53.58 116.42 105.00  W      60 69
+EDSON A                 CAN47 3062244 3062244 53.58 116.47 105.00  W      71 90
+FORT CHIPEWYAN A        CAN52 3072658 3072658 55.35 114.98 105.00         68 78  
+FORT MCMURRAY A         25105 3062693 3062693 56.65 111.22 105.00  W      53 05
+GRANDE PRAIRIE A        25115 3072920 3072920 55.18 118.88 105.00  W      53 05
+HIGH LEVEL A            CAN53 3073146 3073146 58.62 117.16 105.00  W      71 05
+LAC LA BICHE            CAN48 3063680 3063680 54.77 111.97 105.00         53 57
+LAC LA BICHE AUT        CAN49 3063685 3063685 54.77 112.02 105.00         59 70  
+LETHBRIDGE A            94108 3033880 3033880 49.63 112.80 105.00  W      53 05
+LLOYDMINSTER            CAN42 3013961 3013961 53.31 110.07 105.00         83 05
+MEDICINE HAT A          25118 3034480 3034480 50.02 110.72 105.00  W      53 05
+PEACE RIVER A           25101 3075040 3075040 56.23 117.43 105.00         59 05
+PINCHER CREEK           CAN44 3035201 3035201 49.50 113.95 105.00         61 73
+RED DEER A              25119 3025480 3025480 52.18 113.90 105.00         53 05
+ROCKY MTN. HOUSE        CAN05 3015520 3015520 52.38 114.92 105.00         53 77
+SLAVE LAKE              CAN50 3066001 3066001 55.30 114.78 105.00         72 91
+SPRINGBANK A            CAN45 303F0PP 303FOPP 51.10 114.37 105.00         89 01
+VERMILION A             CAN04 3016800 3016800 53.35 110.83 105.00         53 81
+WAGNER                  CAN51 3066920 3066920 55.35 114.98 105.00         53 69
+WHITECOURT              CAN03 3067370 3067370 54.13 115.67 105.00         53 77
+
+BRITISH COLUMBIA
+
+ABBOTSFORD A            24288 1100030 1100030 49.02 122.37 120.00  W      53 05
+BEATTON RIVER A         CAN26 1180750 1180750 57.38 121.28 120.00         53 66
+CAPE ST. JAMES          25342 1051350 1051350 51.93 131.02 120.00  R   R  57 91
+CASTLEGAR A             94110 1141455 1141455 49.30 117.63 120.00  W      54 05
+COMOX A                 24292 1021830 1021830 49.72 124.90 120.00  W      53 05
+CRANBROOK A             94157 1152102 1152102 49.60 115.78 120.00  W      70 05
+FORT NELSON A           25218 1192940 1192940 58.83 122.58 120.00  R   R  53 05
+FORT ST. JOHN A         25231 1183000 1183000 56.23 120.73 120.00  W      53 05
+KAMLOOPS A              25220 1163780 1163780 50.70 120.45 120.00  W      53 05
+KELOWNA A               CAN22 1123970 1123970 49.96 119.38 120.00  W      70 76
+KIMBERLEY A             CAN25 1154200 1154200 49.73 115.78 120.00         53 68
+LYTTON                  CAN21 1114740 1114740 50.23 121.50 120.00  W      53 69
+NANAIMO A               CAN20 1025370 1025370 49.05 123.87 120.00  W      54 67
+OLD GLORY MOUNTAIN      CAN97 1145730 1145730 49.15 117.92 120.00         55 67
+PENTICTON A             94116 1126150 1126150 49.47 119.60 120.00  W      53 05
+PORT HARDY A            25223 1026270 1026270 50.68 127.37 120.00  R   R  53 05
+PRINCE GEORGE A         25206 1096450 1096450 53.88 122.67 120.00  R   R  53 05
+PRINCE RUPERT A         25353 1066481 1066481 54.30 130.43 120.00  W      61 05
+PRINCETON A             CAN23 1126510 1126510 49.47 120.51 120.00  W      53 68
+QUESNEL A               25224 1096630 1096630 53.03 122.52 120.00         53 05
+SANDSPIT A              25346 1057050 1057050 53.25 131.82 120.00  R   R  53 05
+SMITHERS A              25225 1077500 1077500 54.82 127.18 120.00  W      53 05
+SMITH RIVER A           CAN27 1197530 1197530 59.90 126.43 120.00         53 68
+SPRING ISLAND           CAN09 1037650 1037650 50.00 127.42 120.00         53 79
+SUMMERLAND CDA          94152 1127800 1126150 49.57 119.65 120.00  R   R  53 05
+TERRACE A               25229 1068130 1068130 54.47 128.58 120.00  W      55 05
+TOFINO A                94234 1038205 1038205 49.08 125.77 120.00  W      60 05
+VANCOUVER INT'L.        24287 1108447 1108447 49.25 123.25 120.00  W      53 05
+VANCOUVER UBC           94238 1108487 1108447 49.25 123.25 120.00  R   R  53 05
+VICTORIA GONZALES HTS   CAN18 1018610 1018610 48.42 123.32 120.00  W      53 67
+VICTORIA INT'L. A       24297 1018620 1018620 48.65 123.43 120.00  W      53 05
+VICTORIA MARINE         CAN19 1018642 1018642 48.65 123.43 120.00         70 83
+WILLIAMS LAKE A         25247 1098940 1098940 52.18 122.07 120.00  W      61 05
+
+MANITOBA
+
+BRANDON A               14997 5010480 5010480 49.92  99.95 90.00   W      59 05
+CHURCHILL A             15901 5060600 5060600 58.75  94.07 90.00   R   R  53 05
+DAUPHIN A               25009 5040680 5040680 51.10 100.05 90.00   W      55 05
+GIMLI                   CAN96 5031038 5031038 50.63  97.02 90.00   W      72 90
+GIMLI A                 CAN63 5031040 5031040 50.63  97.05 90.00          53 71
+ISLAND LAKE             CAN60 5061376 5061376 53.85  94.65 90.00          87 05
+LYNN LAKE               CAN61 5061646 5061646 53.86 101.08 90.00   W      70 04
+NORWAY HOUSE            CAN62 506B047 506B047 53.95  97.85 90.00          75 04
+PORTAGE LA PRAIRIE A    94912 5012320 5012320 49.90  98.27 90.00          53 05
+RIVERS                  CAN59 5012440 5012440 50.02 100.32 90.00   W      53 69
+THE PAS A               25004 5052880 5052880 53.97 101.10 90.00   R   R  53 05
+THOMPSON A              15919 5062922 5062922 55.80  97.87 90.00   W      68 05
+WINNIPEG INT'L. A       14996 5023222 5023222 49.90  97.23 90.00   R   R  53 05 
+
+NEW BRUNSWICK
+
+CAMPBELLTON             CAN76 8100700 8100700 48.00  66.67 60.00   W      53 66
+CHARLO A                14683 8100880 8100880 48.00  66.33 60.00   W      67 90
+FREDERICTON CDA         14670 8101600 8101500 45.92  66.62 60.00   R   R  53 05
+MIRAMICHI A             14631 8101000 8101000 47.02  65.45 60.00   W      53 05
+MONCTON A               14625 8103200 8103200 46.12  64.68 60.00   W      53 05
+SAINT JOHN A            14643 8104900 8104900 45.32  65.88 60.00   W      53 05
+ST LEONARD              CAN78 8104928 8104928 47.16  67.83 60.00   W      86 94
+
+NEWFOUNDLAND
+
+ARGENTIA A              CAN85 8400100 8400100 47.30  54.00 60.00          53 69
+BATTLE HARBOUR          CAN06 8500398 8500398 52.25  55.60 60.00          57 83
+BONAVISTA               14522 8400600 8400600 48.70  53.08 60.00          60 94
+BUCHANS A               CAN87 8400700 8400700 48.85  56.83 60.00          53 64
+BURGEO                  CAN88 8400798 8400798 47.62  57.62 60.00   W      67 90
+CAPE HARRISON           CAN95 8500900 8500900 54.77  58.45 60.00          53 59
+CARTWRIGHT              15503 8501100 8501100 53.70  57.03 60.00   W      64 05
+CHURCHILL FALLS A       CAN83 8501132 8501132 53.55  64.10 60.00   W      69 92
+COMFORT COVE            CAN89 8400798 8400798 49.27  54.88 60.00          67 82 
+DANIELS HARBOUR         15504 8401400 8401400 50.23  57.58 60.00   W      66 87
+DEER LAKE A             14523 8401501 8401501 49.22  57.40 60.00          66 05
+GANDER INT'L. A         14509 8401700 8401700 48.95  54.57 60.00   W      53 05
+GOOSE UA                15601 8501910 8501900 53.32  60.37 60.00   W   R  53 05
+HOPEDALE                15642 8502400 8502400 55.45  60.23 60.00          64 83
+PORT AUX BASQUES        CAN90 8402975 8402975 47.57  59.15 60.00          67 91
+ST. ANDREWS             CAN91 8403300 8403300 47.77  59.33 60.00          53 65
+ST. ANTHONY             CAN92 8403400 8403400 51.37  55.58 60.00          53 65 
+ST. JOHN'S A            14506 8403506 8403506 47.62  52.75 60.00   W      53 05
+ST. JOHN'S WEST CDA     14521 8403600 8403506 47.52  52.78 60.00   R   R  53 05
+STEPHENVILLE A          14503 8403800 8403800 48.53  58.55 60.00   W      54 05
+TWILLINGATE             CAN94 8404000 8404000 49.67  54.82 60.00          54 66
+WABUSH LAKE A           15628 8504175 8504175 52.93  66.87 60.00   W      61 05
+
+
+NORTH-WEST TERRITORIES
+ 
+CAPE PARRY A            27202 2200675 2200675 70.17 124.68 105.00         57 05
+FORT RELIANCE           CAN32 2201900 2201900 62.72 109.17 105.00         69 90
+FORT RESOLUTION A       CAN33 2202000 2202000 61.28 113.69 105.00         60 69
+FORT SIMPSON            CAN34 2202100 2202100 61.87 121.35 120.00  W      56 62
+FORT SIMPSON A          CAN35 2202101 2202101 61.76 121.24 120.00  W      64 05
+FORT SMITH A            26102 2202200 2202200 60.02 111.97 105.00  W      53 05
+HAY RIVER A             CAN36 2202400 2202400 60.84 115.78 105.00         53 05
+INUVIK UA               22258 2202582 2202570 68.32 133.53 105.00  R   R  58 05
+NORMAN WELLS A          26202 2202800 2202800 65.28 126.80 105.00  R   R  56 05
+SACHS HARBOUR A         CAN41 2503650 2503650 72.00 125.27 105.00         71 76
+YELLOWKNIFE A           26110 2204100 2204100 62.47 114.45 105.00  W      53 05 
+
+NOVA SCOTIA
+
+COPPER LAKE             CAN79 8201100 8201100 45.38  61.97 60.00   W      53 61
+DEBERT                  CAN80 8201400 8201400 45.42  63.45 60.00          53 60
+EDDY POINT              CAN81 8201716 8201716 45.52  61.25 60.00   W      72 84
+GREENWOOD A             14636 8202000 8202000 44.98  64.92 60.00          53 05
+HALIFAX                 CAN82 8202200 8202200 44.65  63.57 60.00   W      53 62
+HALIFAX INT'L. A        14673 8202250 8202250 44.88  63.52 60.00          61 05
+SABLE ISLAND            14642 8204700 8204700 43.93  60.02 60.00   R   R  56 91
+SHEARWATER A            14633 8205090 8205090 44.63  63.50 60.00   W      53 05
+SHELBURNE               CAN84 8205126 8205126 43.72  65.25 60.00   W      82 86
+SYDNEY A                14646 8205700 8205700 46.17  60.05 60.00   W      53 05
+TRURO                   14675 8205990 8205990 45.37  63.27 60.00   W      61 76
+YARMOUTH A              14647 8206500 8206500 43.83  66.08 60.00   W      53 05
+
+NUNAVUT
+
+ALERT                   CANA4 2400300 2400300 82.50  62.33  60.00         64 05
+BAKER LAKE              16903 2300500 2300500 64.30  96.00  90.00  R   R  63 05
+CAMBRIDGE BAY A         26005 2400600 2400600 69.10 105.12 105.00  R   R  56 05
+CAPE DYER               CAN39 2400654 2400654 66.58  61.62  60.00         60 89
+CHESTERFIELD            16914 2300700 2300700 63.33  90.72  90.00         63 67
+CLYDE                   CAN93 2400800 2400800 70.49  68.52  75.00         85 93
+COPPERMINE              CAN69 2300900 2300900 67.83 115.14 105.00  W      70 77
+CORAL HARBOUR A         16801 2301000 2301000 64.20  83.37  75.00  R   R  56 05
+ENNADAI                 CAN37 2301100 2301100 61.13 100.90  90.00         56 69
+EUREKA                  CANA5 2401200 2401200 80.00  85.93  75.00  W   R  82 05
+HALL BEACH A            16895 2402350 2402350 68.78  81.25  75.00      R  59 05
+ISACHSEN                CANA7 2402600 2402600 78.78 103.53 105.00         70 78
+IQALUIT A               16603 2402590 2402590 63.75  68.55  75.00  W      53 05
+KUGLUKTUK A             CAN86 2300902 2300902 67.82 115.14 105.00  W      80 05
+RANKIN INLET A          CAN38 2303401 2303401 62.82  92.10  90.00         81 05
+REA POINT               CAN40 2403450 2403450 75.37 105.72 105.00         72 76
+RESOLUTE                17901 2403500 2403500 74.72  94.98  90.00  R   R  63 05
+
+ONTARIO
+
+ARMSTRONG A             CAN08 6040325 6040325 50.28  88.90 75.00   W      53 67
+ATIKOKAN                94932 6020379 6020379 48.75  91.62 75.00   W      67 88
+BIG TROUT LAKE          15806 6010738 6010738 53.83  89.87 90.00   R   R  67 90
+BUTTONVILLE             CAN17 615HMAK 615HMAK 43.87  79.37 75.00          87 05
+CHAPLEAU                CAN67 6061358 6061358 47.83  83.43 75.00          66 75
+EARLTON A               94797 6072225 6072225 47.70  79.85 75.00          53 05
+GERALDTON               CAN10 6042715 6042715 49.70  86.95 75.00          68 76
+GORE BAY A              94803 6092925 6092925 45.88  82.57 75.00          55 05
+GRAHAM A                CAN64 6042975 6042975 49.27  90.58 75.00          53 66
+HAMILTON A              04797 6153194 6153194 43.25  79.93 75.00          70 05
+KAPUSKASING A           14899 6073975 6073975 49.42  82.47 75.00       R  53 05
+KENORA A                14999 6034075 6034075 49.80  94.37 90.00          53 05
+KINGSTON A              CAN15 6104146 6404146 44.22  76.60 75.00   W      70 94  
+KILLALOE                CAN68 6104125 6104215 45.57  77.42 75.00          53 71
+LONDON A                94805 6144475 6144475 43.03  81.15 75.00   W      55 05
+MOOSONEE                CANA1 6075425 6075425 51.27  80.65 75.00   W      57 93
+MOUNT FOREST            94857 6145503 6145503 43.98  80.75 75.00   W      62 86
+MUSKOKA A               04704 6115525 6115525 44.97  79.30 75.00          55 05
+NAKINA A                CAN65 6045550 6045550 50.18  86.70 75.00          53 66
+NORTH BAY A             04705 6085700 6085700 46.37  79.42 75.00   W      53 05
+OTTAWA CDA              CAN14 6105976 6106000 45.38  75.72 75.00   R   R  53 05
+OTTAWA NRC              04772 6106090 6106000 45.45  75.62 75.00   W   R  53 05
+PETAWAWA A              CAN70 6106398 6106398 45.95  77.32 75.00          72 92
+PETERBOROUGH A          CAN99 6166418 6166418 44.23  78.35 75.00          96 04
+SAULT STE. MARIE A      94842 6057592 6057592 46.48  84.50 75.00   W      62 05
+SIMCOE                  94858 6137730 6137730 42.85  80.27 75.00          62 76
+SIOUX LOOKOUT A         15909 6037775 6037775 50.12  91.90 90.00          53 05
+ST. CATHERINES A        CAN16 6137287 6137287 43.20  79.17 75.00          72 05
+STIRLING                CAN71 6158050 6158050 44.32  77.63 75.00          53 68
+SUDBURY A               94828 6068150 6068150 46.62  80.80 75.00   W      54 05
+THUNDER BAY A           94804 6048261 6048261 48.37  89.32 75.00   W      53 05
+TIMMINS A               94831 6078285 6078285 48.57  81.37 75.00          55 05
+TORONTO                 04714 6158350 6158733 43.67  79.38 75.00   R   R  55 05
+TORONTO DOWNSVIEW A     CAN72 6158443 6158443 43.75  79.48 75.00          58 64
+TORONTO ISLAND A        CANA2 6158665 6158665 43.63  79.40 75.00          61 05
+TORONTO MET RES STN     04795 6158740 6158733 43.80  79.55 75.00   R   R  53 05
+TORONTO PEARSON INT'L   94791 6158733 6158733 43.67  79.63 75.00          53 05
+TRENTON A               04715 6158875 6158875 44.12  77.53 75.00          53 05
+WHITE RIVER             CAN66 6059475 6059475 48.60  85.28 75.00   W      53 75
+WIARTON A               94809 6119500 6119500 44.75  81.10 75.00   W      53 05
+WINDSOR A               94810 6139525 6139525 42.27  82.97 75.00          53 05
+
+PRINCE EDWARD ISLAND
+
+CHARLOTTETOWN CDA       14688 8300400 8300300 46.25  63.13 60.00   R   R  53 05
+SUMMERSIDE A            14645 8300700 8300700 46.43  63.83 60.00   W      53 90
+
+QUEBEC
+
+BAGOTVILLE A            94795 7060400 7060400 48.33  71.00 75.00          53 05
+BAIE COMEAU A           14627 7040440 7040440 49.13  68.20 75.00   W      65 04
+CHIBOUGAMAU A           CAN74 7091401 7091401 49.82  74.42 75.00   W      72 81
+CHIBOUGAMAU CHAPAIS     CAN75 7091404 7091404 49.77  74.53 75.00   W      83 91
+GASPE A                 CAN73 7052605 7052605 48.78  64.48 60.00   W      77 05
+GRINDSTONE ISLAND       CAN13 7052960 7052960 47.38  61.87 60.00   W      69 82
+KUUJJUARAPIK A          15701 7103536 7103536 55.28  77.77 75.00   W      53 05
+KUUJUAQ A               15605 7113534 7113534 58.10  68.42 75.00   R   R  55 05
+LA GRANDE IV A          CANA8 7093GJ3 7093GJ3 53.75  73.67 75.00   W      86 91
+LA GRANDE RIVIERE A     73715 7093715 7093715 53.63  77.70 75.00   W      76 05
+LAKE EON A              CAN07 7043740 7043740 51.87  63.28 75.00          56 76
+MONT JOLI A             14639 7055120 7055120 48.60  68.20 75.00   W      53 05
+MONTREAL INT'L. A       94792 7025250 7025250 45.47  73.75 75.00   R   R  53 05
+MONTREAL JEAN BREBEUF   04770 7025260 7025250 45.50  73.62 75.00  R/W  R  53 05
+MONTREAL MIRABEL A      75290 7035290 7035290 45.68  74.03 75.00   W      76 05
+NITCHEQUON              15703 7095480 7095480 53.20  70.90 75.00   R   R  59 85
+QUEBEC A                04708 7016294 7016294 46.80  71.38 75.00   W      53 05
+RIVIERE DU LOUP         CAN12 7056615 7056615 47.80  69.55 75.00          66 79
+ROBERVAL A              04752 7066685 7066685 48.52  72.27 75.00   W      58 05
+SCHEFFERVILLE A         15619 7117825 7117825 54.80  66.82 75.00   R   R  62 93
+SEPT-ILES UA            77912 7047912 7047910 50.22  66.25 75.00   R   R  53 05
+SHERBROOKE A            04785 7028124 7028124 45.43  71.68 75.00   W      63 94
+ST. HUBERT A            04712 7027320 7027320 45.52  73.42 75.00          53 05
+STE. AGATHE DES MONTS   04790 7036762 7036762 46.05  74.28 75.00   W      67 91
+VAL D'OR A              04730 7098600 7098600 48.05  77.78 75.00   W      55 05
+
+NOTE: MONTREAL JEAN BREBEUF         SUN = R UNTIL 1969, SUN = W FROM 1970
+
+SASKATCHEWAN
+
+BROADVIEW               25030 4010879 4010879 50.38 102.55 90.00   W      65 05
+COLLINS BAY             CANA3 4061630 4061630 58.17 103.70 105.00         72 90
+ESTEVAN A               24092 4012400 4012400 49.07 103.00 90.00   W      53 05
+HUDSON BAY              CAN57 4083320 4083320 52.87 102.40 90.00          54 73
+KINDERSLEY              CAN54 4043900 4043900 51.52 109.48 90.00   W      86 05
+LA RONGE                CAN55 4064150 4064150 55.15 105.27 90.00          77 05
+MOOSE JAW A             25018 4015320 4015320 50.33 105.55 90.00   W      54 05
+NORTH BATTLEFORD A      25012 4045600 4045600 52.77 108.25 90.00   W      53 05
+PRINCE ALBERT A         25013 4056240 4056240 53.22 105.68 90.00   W      53 05
+REGINA A                25005 4016560 4016560 50.43 104.67 90.00   W      53 05
+SASKATOON               25015 4057120 4057120 52.17 106.68 90.00          53 05
+STONY RAPIDS A          CAN56 4067PR5 4067PR5 59.25 105.83 90.00          87 05
+SWIFT CURRENT CDA       25028 4028060 4028040 50.27 107.73 105.00 W/R  R  55 05
+URANIUM CITY A          CAN02 4068340 4068340 59.57 108.48 105.00         63 82
+WYNYARD                 25029 4019035 4019035 51.77 104.20 90.00   W      65 88
+YORKTON A               25017 4019080 4019080 51.27 102.47 90.00   W      53 05
+
+NOTE: SWIFT CURRENT CDA             SUN = W UNTIL 1966, SUN = R FROM 1967
+
+YUKON TERRITORY
+
+BURWASH A               26325 2100182 2100182 61.37 140.05 120.00         67 86
+DAWSON                  CAN58 2100400 2100400 64.05 139.43 120.00         60 75
+DAWSON A                CAN24 2100402 2100402 64.04 139.13 120.00         76 87
+MAYO                    CAN28 2100700 2100700 63.62 135.87 120.00         74 05
+SNAG A                  CAN29 2101000 2101000 62.37 140.40 120.00         53 65
+TESLIN A                CAN30 2101100 2101100 60.17 132.74 120.00         55 05
+WATSON LAKE             CAN31 2101200 2101200 60.12 128.82 120.00  W      53 92
+WHITEHORSE A            26316 2101300 2101300 60.72 135.07 120.00  R   R  53 05
+
+
+APPENDIX C - CORRESPONDANCE WBAN NUMBER / STATION NAME
+
+
+WBAN     STATION NAME
+
+04704    MUSKOKA A  (ONT)
+04705    NORTH BAY A  (ONT)
+04708    QUEBEC A  (QUE)
+04712    ST. HUBERT A  (QUE)
+04714    TORONTO  (ONT)
+04715    TRENTON A  (ONT)
+04730    VAL D'OR A  (QUE)
+04752    ROBERVAL A  (QUE)
+04770    MONTREAL JEAN BREBEUF  (QUE)
+04772    OTTAWA NRC  (ONT)
+04785    SHERBROOKE A  (QUE)
+04790    STE. AGATHE DES MONTS  (QUE)
+04795    TORONTO MET RES STN  (ONT)
+04797    HAMILTON A (ONT)
+14503    STEPHENVILLE A  (NFLD)
+14506    ST. JOHN'S A  (NFLD)
+14509    GANDER INT'L. A  (NFLD)
+14521    ST. JOHN'S WEST CDA  (NFLD)
+14522    BONAVISTA  (NFLD)
+14523    DEER LAKE A  (NFLD)
+14625    MONCTON A  (NB)
+14627    BAIE COMEAU A  (QUE)
+14631    MIRAMICHI A  (NB)
+14633    SHEARWATER A  (NS)
+14636    GREENWOOD A  (NS)
+14639    MONT JOLI A  (QUE)
+14642    SABLE ISLAND  (NS)
+14643    SAINT JOHN A  (NB)
+14645    SUMMERSIDE A  (PEI)
+14646    SYDNEY A  (NS)
+14647    YARMOUTH A  (NS)
+14670    FREDERICTON CDA  (NB)
+14673    HALIFAX INT'L. A  (NS)
+14675    TRURO  (NS)
+14683    CHARLO A  (NB)
+14688    CHARLOTTETOWN CDA  (PEI)
+14899    KAPUSKASING A  (ONT)
+14996    WINNIPEG INT'L. A  (MAN)
+14997    BRANDON A  (MAN)
+14999    KENORA A  (ONT)
+15503    CARTWRIGHT  (NFLD)
+15504    DANIELS HARBOUR  (NFLD)
+15601    GOOSE UA  (NFLD)
+15605    KUUJUAQ A (QUE)
+15619    SCHEFFERVILLE A  (QUE)
+15628    WABUSH LAKE A  (NFLD)
+15642    HOPEDALE  (NFLD)
+15701    KUUJJUARAPIK A (QUE)
+15703    NITCHEQUON  (QUE)
+15806    BIG TROUT LAKE  (ONT)
+15901    CHURCHILL A  (MAN)
+15909    SIOUX LOOKOUT A  (ONT)
+15919    THOMPSON A  (MAN)
+16603    IQALUIT A  (NU)
+16801    CORAL HARBOUR A  (NU)
+16895    HALL BEACH A  (NU)
+16903    BAKER LAKE  (NU)
+16914    CHESTERFIELD (NU)
+17901    RESOLUTE A  (NU)
+22258    INUVIK UA  (NWT)
+24092    ESTEVAN A  (SASK)
+24287    VANCOUVER INT'L. A (BC)
+24288    ABBOTSFORD A  (BC)
+24292    COMOX A  (BC)
+24297    VICTORIA INT'L. A  (BC)
+25004    THE PAS A  (MAN)
+25005    REGINA A  (SASK)
+25009    DAUPHIN A  (MAN)
+25012    NORTH BATTLEFORD A  (SASK)
+25013    PRINCE ALBERT A  (SASK)
+25015    SASKATOON  (SASK)
+25017    YORKTON A  (SASK)
+25018    MOOSE JAW A  (SASK)
+25028    SWIFT CURRENT CDA  (SASK)
+25029    WYNYARD  (SASK)
+25030    BROADVIEW  (SASK)
+25101    PEACE RIVER A  (ALTA)
+25105    FORT MCMURRAY A  (ALTA)
+25110    CALGARY INT'L. A  (ALTA)
+25113    CORONATION  (ALTA)
+25115    GRANDE PRAIRIE A  (ALTA)
+25118    MEDICINE HAT A  (ALTA)
+25119    RED DEER A  (ALTA)
+25129    COLD LAKE A  (ALTA)
+25142    EDMONTON INT'L. A  (ALTA)
+25145    EDMONTON STONY PLAIN (ALTA)
+25206    PRINCE GEORGE A  (BC)
+25218    FORT NELSON A  (BC)
+25220    KAMLOOPS A  (BC)
+25223    PORT HARDY A  (BC)
+25224    QUESNEL A  (BC)
+25225    SMITHERS A  (BC)
+25229    TERRACE A  (BC)
+25231    FORT ST. JOHN A  (BC)
+25247    WILLIAMS LAKE A  (BC)
+25342    CAPE ST. JAMES  (BC)
+25346    SANDSPIT A  (BC)
+25353    PRINCE RUPERT A  (BC)
+26005    CAMBRIDGE BAY A  (NU)
+26102    FORT SMITH A  (NWT)
+26110    YELLOWKNIFE A  (NWT)
+26202    NORMAN WELLS A  (NWT)
+26316    WHITEHORSE A  (YT)
+26325    BURWASH A   (YT)
+27202    CAPE PARRY A  (NWT)
+73715    LA GRANDE RIVIERE A (QUE)
+75290    MONTREAL MIRABEL A  (QUE)
+77912    SEPT-ILES UA  (QUE)
+94108    LETHBRIDGE A  (ALTA)
+94110    CASTLEGAR A  (BC)
+94116    PENTICTON A  (BC)
+94152    SUMMERLAND CDA  (BC)
+94157    CRANBROOK A  (BC)
+94234    TOFINO A  (BC)
+94238    VANCOUVER UBC  (BC)
+94791    TORONTO PEARSON INT'L. A (ONT)
+94792    MONTREAL INT'L. A  (QUE)
+94795    BAGOTVILLE A  (QUE)
+94797    EARLTON A  (ONT)
+94803    GORE BAY A  (ONT)
+94804    THUNDER BAY A  (ONT)
+94805    LONDON A  (ONT)
+94809    WIARTON A  (ONT)
+94810    WINDSOR A  (ONT)
+94828    SUDBURY A  (ONT)
+94831    TIMMINS A  (ONT)
+94842    SAULT STE. MARIE A  (ONT)
+94857    MOUNT FOREST  (ONT)
+94858    SIMCOE  (ONT)
+94912    PORTAGE LA PRAIRIE A  (MAN)
+94932    ATIKOKAN  (ONT)
+CAN02    URANIUM CITY A  (SASK)
+CAN03    WHITECOURT  (ALTA)
+CAN04    VERMILION A  (ALTA)
+CAN05    ROCKY MTN. HOUSE  (ALTA)
+CAN06    BATTLE HARBOUR  (NFLD)
+CAN07    LAKE EON A  (QUE)
+CAN08    ARMSTRONG A  (ONT)
+CAN09    SPRING ISLAND  (BC)
+CAN10    GERALDTON  (ONT)
+CAN12    RIVIERE DU LOUP  (QUE)
+CAN13    GRINDSTONE ISLAND  (QUE)
+CAN14    OTTAWA CDA  (ONT)
+CAN15    KINGSTON (ONT)
+CAN16    ST. CATHERINES A (ONT)
+CAN17    BUTTONVILLE (ONT)
+CAN18    VICTORIA GONZALES HTS (BC)
+CAN19    VICTORIA MARINE (BC)
+CAN20    NANAIMO A (BC)
+CAN21    LYTTON (BC)
+CAN22    KELOWNA A (BC)
+CAN23    PRINCETON A (BC)
+CAN24    DAWSON A (YT)
+CAN25    KIMBERLEY A (BC)
+CAN26    BEATTON RIVER A (BC)
+CAN27    SMITH RIVER A (BC)
+CAN28    MAYO (YT)
+CAN29    SNAG A (YT)
+CAN30    TESLIN A (YT)
+CAN31    WATSON LAKE A (YT)
+CAN32    FORT RELIANCE (NWT)
+CAN33    FORT RESOLUTION A (NWT)
+CAN34    FORT SIMPSON (NWT)
+CAN35    FORT SIMPSON A (NWT)
+CAN36    HAY RIVER A (NWT)
+CAN37    ENNADAI (NU)
+CAN38    RANKIN INLET A (NU)
+CAN39    CAPE DYER (NU) 
+CAN40    REA POINT (NU)
+CAN41    SACHS HARBOUR A (NWT)
+CAN42    LLOYDMINSTER (ALTA)
+CAN43    COWLEY A (ALTA)
+CAN44    PINCHER CREEK (ALTA)
+CAN45    SPRINGBANK A (ALTA)
+CAN46    EDSON (ALTA)
+CAN47    EDSON A (ALTA)
+CAN48    LAC LA BICHE (ALTA)
+CAN49    LAC LA BICHE AUT (ALTA)
+CAN50    SLAVE LAKE (ALTA)
+CAN51    WAGNER (ALTA)
+CAN52    FORT CHIPEWYAN A (ALTA)
+CAN53    HIGH LEVEL A (ALTA)
+CAN54    KINDERSLEY A (SASK)
+CAN55    LA RONGE A (SASK)
+CAN56    STONY RAPIDS A (SASK)
+CAN57    HUDSON BAY (SASK)
+CAN58    DAWSON (YT)
+CAN59    RIVERS (MAN)
+CAN60    ISLAND LAKE (MAN)
+CAN61    LYNN LAKE A (MAN)
+CAN62    NORWAY HOUSE (MAN)
+CAN63    GIMLI A (MAN)
+CAN64    GRAHAM A (ONT)
+CAN65    NAKINA A (ONT)
+CAN66    WHITE RIVER (ONT)
+CAN67    CHAPLEAU (ONT)
+CAN68    KILLALOE (ONT)
+CAN69    COPPERMINE (NU)
+CAN70    PETAWAWA A (ONT)
+CAN71    STIRLING (ONT)
+CAN72    TORONTO DOWNSVIEW A (ONT)
+CAN73    GASPE A (QUE)
+CAN74    CHIBOUGAMAU A (QUE)
+CAN75    CHIBOUGAMAU CHAPAIS A (QUE)
+CAN76    CAMPBELLTON (NB)
+CAN78    ST LEONARD (NB)
+CAN79    COPPER LAKE (NS)
+CAN80    DEBERT (NS)
+CAN81    EDDY POINT (NS)
+CAN82    HALIFAX (NS)
+CAN83    CHURCHILL FALLS A (NFLD)
+CAN84    SHELBURNE (NS)
+CAN85    ARGENTIA A (NFLD)
+CAN86    KUGLUKTUK (NU)
+CAN87    BUCHANS A (NFLD)
+CAN88    BURGEO (NFLD)
+CAN89    COMFORT COVE (NFLD)
+CAN90    PORT AUX BASQUES (NFLD)
+CAN91    ST ANDREWS (NFLD)
+CAN92    ST ANTHONY (NFLD)
+CAN93    CLYDE A (NU)
+CAN94    TWILLINGATE (NFLD)
+CAN95    CAPE HARRISON (NFLD)
+CAN96    GIMLI (MAN)
+CAN97    OLD GLORY MOUNTAIN (BC) 
+CAN98    EDMONTON MUNICIPAL A (ALTA)   
+CAN99    PETERBOROUGH A (ONT)  
+CANA1    MOOSONEE (ONT)
+CANA2    TORONTO ISLAND A (ONT)
+CANA3    COLLINS BAY (SASK)
+CANA4    ALERT (NU)
+CANA5    EUREKA (NU)
+CANA6    EDMONTON NAMAO (ALTA) 
+CANA7    ISACHSEN (NU)  
+CANA8    LA GRANDE IV A (QUE)   
+
+APPENDIX D - AVAILABLE CWEC FILES
+
+Station Name               WBAN         File           Based          Max %
+                                        Name          on years     derived data
+
+Abbotsford, BC             24288     W24288W.CW2     1960-1989         100
+Comox, BC                  24292     W24292W.CW2     1960-1989         100
+Fort St John, BC           25231     W25231W.CW2     1960-1989         100
+Kamloops, BC               25220     W25220W.CW2     1970-1989         100
+Port Hardy, BC             25223     W25223W.CW2     1967-1991          10
+Prince George, BC          25206     W25206W.CW2     1973-1989          25
+Prince Rupert, BC          25353     W25353W.CW2     1963-1989         100
+Sandspit, BC               25346     W25346W.CW2     1967-1992          10
+Smithers, BC               25225     W25225W.CW2     1960-1989         100
+Summerland, BC             94152     W94152W.CW2     1961-1989          10
+Vancouver, BC              94238     W94238W.CW2     1960-1989          10
+Victoria, BC               24297     W24297W.CW2     1960-1989         100
+Calgary, Alta              25110     W25110W.CW2     1960-1989         100
+Edmonton, Alta             25145     W25145W.CW2     1967-1991          10
+Fort McMurray, Alta        25105     W25105W.CW2     1960-1989         100
+Lethbridge, Alta           94108     W94108W.CW2     1960-1989         100
+Medicine Hat, Alta         25118     W25118W.CW2     1960-1989         100
+Estevan, Sask              24092     W24092W.CW2     1963-1989         100
+North Battleford, Sask     25012     W25012W.CW2     1960-1989         100
+Regina, Sask               25005     W25005W.CW2     1960-1989         100
+Saskatoon, Sask            25015     W25015W.CW2     1960-1989         100
+Swift Current, Sask        25028     W25028W.CW2     1960-1989          10
+Churchill, Man             15901     W15901W.CW2     1964-1989          25
+The Pas, Man               25004     W25004W.CW2     1972-1991          10
+Winnipeg, Man              14996     W14996W.CW2     1960-1989          10
+Kingston, Ont              CAN15     WCAN15W.CW2     1970-1994         100
+London, Ont                94805     W94805W.CW2     1960-1989         100
+Mount Forest, Ont          94857     W94857W.CW2     1962-1976         100
+Muskoka, Ont               04704     W04704W.CW2     1953-1978         100
+North Bay, Ont             04705     W04705W.CW2     1960-1989         100
+Ottawa, Ont                04772     W04772W.CW2     1958-1983          10
+Sault Ste Marie, Ont       94842     W94842W.CW2     1962-1989         100
+Simcoe, Ont                94858     W94858W.CW2     1962-1976         100
+Thunder Bay, Ont           94804     W94804W.CW2     1960-1989         100
+Toronto, Ont               04714     W04714W.CW2     1960-1989          10
+Trenton, Ont               04715     W04715W.CW2     1960-1989         100
+Windsor, Ont               94810     W94810W.CW2     1953-1989         100
+Bagotville, Que            94795     W94795W.CW2     1960-1989         100
+Baie Comeau, Que           14627     W14627W.CW2     1965-1989         100
+Grindstone Island, Que     CAN13     WCAN13W.CW2     1969-1982         100
+Kuujjuarapik, Que          15701     W15701W.CW2     1960-1989         100
+Kuujuaq, Que               15605     W15605W.CW2     1960-1989         100
+La Grande Riviere, Que     73715     W73715W.CW2     1977-1989         100
+Lake Eon, Que              CAN07     WCAN07W.CW2     1960-1976         100
+Mont Joli, Que             14639     W14639W.CW2     1960-1989         100
+Montreal Int'l., Que       94792     W94792W.CW2     1960-1989         100
+Montreal Jean Brebeuf, Que 04770     W047704.CW2     1964-1986          10
+Montreal Mirabel, Que      75290     W75290W.CW2     1976-1989         100
+Nitchequon, Que            15703     W15703W.CW2     1959-1983         100
+Quebec, Que                04708     W04708W.CW2     1960-1989         100
+Riviere du Loup, Que       CAN12     WCAN12W.CW2     1966-1979         100
+Roberval, Que              04752     W04752W.CW2     1960-1989         100
+Schefferville, Que         15619     W15619W.CW2     1960-1989         100
+Sept-Iles, Que             77912     W77912W.CW2     1973-1992          10
+Sherbrooke, Que            04785     W04785W.CW2     1963-1989         100
+St. Hubert, Que            04712     W04712W.CW2     1960-1989         100
+Ste. Agathe des Monts, Que 04790     W04790W.CW2     1967-1989         100
+Val d'Or, Que              04730     W04730W.CW2     1960-1989         100
+Fredericton, NB            14670     W14670W.CW2     1960-1989          10
+Saint John, NB             14643     W14643W.CW2     1960-1989         100
+Greenwood, NS              14636     W14636W.CW2     1960-1989         100
+Sable Island, NS           14642     W14642W.CW2     1969-1989          10
+Shearwater, NS             14633     W14633W.CW2     1960-1989         100
+Sydney, NS                 14646     W14646W.CW2     1960-1989         100
+Truro, NS                  14675     W14675W.CW2     1960-1976         100
+Charlottetown, PEI         14688     W14688W.CW2     1971-1989          10
+Battle Harbour, NFLD       CAN06     WCAN06W.CW2     1958-1982         100
+Gander, NFLD               14509     W14509W.CW2     1960-1989         100
+Goose Bay, NFLD            15601     W15601W.CW2     1960-1989          10
+St. John's, NFLD           14521     W14521W.CW2     1960-1989          10
+Stephenville, NFLD         14503     W14503W.CW2     1965-1989         100
+Inuvik, NWT (*)            22258     W22258W.CW2     1973-1992          25
+Resolute, NWT              17901     W17901W.CW2     1963-1989          25
+Yellowknife, NWT (*)       26110     W26110W.CW2     1960-1989         100
+Whitehorse, YT             26316     W26316W.CW2     1970-1989          25
+
+
+
+(*) Due to the unavailability of many measurements for this station, the Dew
+Point Temperature was not taken into account to select typical months. The
+weights normally attributed to the Dew Point Temperature in the selection
+process were transferred to the Dry Bulb Temperature.
+
+
+APPENDIX E - MONTHS SELECTED BY CWEC WEATHER DATA ANALYSIS
+
+CWEC weather files are made by concatenating individual months of real data
+chosen for their representativity. The table below provides the origin of the
+months chosen.
+
+
+ WBAN Station Name                                    Year of Origin
+			         
+                                   Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+			         
+ 04704 Muskoka, Ont                65  70  63  63  55  53  69  58  78  57  54  64
+ 04705 North Bay, Ont              65  82  88  63  87  84  69  89  79  89  71  68
+ 04708 Quebec, Que                 72  88  64  66  71  81  85  76  67  89  74  86
+ 04712 St. Hubert, Que             62  70  61  69  71  69  68  71  72  64  74  77
+ 04714 Toronto, Ont                69  65  64  64  63  70  81  89  78  69  83  61
+ 04715 Trenton, Ont                69  88  88  67  70  79  63  89  80  86  83  88
+ 04730 Val d'Or, Que               77  65  85  60  79  70  77  89  88  64  83  88
+ 04752 Roberval, Que               77  61  85  63  71  60  85  85  72  75  84  88
+ 04770 Montreal, Que               65  70  69  69  70  81  68  67  79  69  74  78
+ 04772 Ottawa, Ont                 66  80  64  64  68  70  77  81  79  69  74  60
+ 04785 Sherbrooke, Que             86  70  85  77  85  70  84  71  80  64  89  83
+ 04790 Ste. Agathe des Monts, Que  80  88  69  74  81  81  84  81  79  86  83  78
+ 14503 Stephenville, NFLD          88  85  88  80  82  76  76  77  71  88  75  77
+ 14509 Gander, NFLD                67  63  80  64  61  70  77  81  63  80  75  77
+ 14521 St. John's, NFLD            78  85  77  74  66  88  64  69  71  65  74  75
+ 14627 Baie Comeau, Que            75  76  85  66  81  69  78  89  72  81  87  65
+ 14633 Shearwater, NS              73  71  88  89  84  84  81  80  67  73  84  65
+ 14636 Greenwood, NS               72  70  69  69  61  84  83  80  80  81  84  67
+ 14639 Mont Joli, Que              65  71  82  66  81  81  85  74  84  73  62  83
+ 14642 Sable Island, NS            81  77  76  89  78  77  85  79  84  73  84  77
+ 14643 Saint John, NB              62  88  69  84  75  81  85  71  60  77  74  67
+ 14646 Sydney, NS                  88  65  80  79  61  84  60  65  65  77  74  83
+ 14670 Fredericton, NB             87  71  82  69  70  84  71  81  89  73  80  65
+ 14675 Truro, NS                   64  74  64  70  69  70  76  62  67  66  67  67
+ 14688 Charlottetown, PEI          72  77  75  82  86  89  78  80  71  73  84  75
+ 14996 Winnipeg, Man               67  82  84  68  73  86  81  72  82  89  77  75
+ 15601 Goose Bay, NFLD             65  65  85  77  83  66  87  81  82  83  84  65
+ 15605 Kuujuaq, Que                79  86  85  80  78  65  67  61  80  89  83  64
+ 15619 Schefferville, Que          70  85  79  89  82  87  79  74  82  87  76  86
+ 15701 Kuujjuarapik, Que           77  77  82  77  62  77  80  69  60  66  74  71
+ 15703 Nitchequon, Que             73  75  61  80  77  66  82  60  73  66  70  59
+ 15901 Churchill, Man              73  82  86  72  65  89  84  75  75  88  88  88
+ 17901 Resolute, NWT               80  86  87  67  78  76  73  83  74  82  88  83
+ 22258 Inuvik, NWT                 92  87  82  83  75  91  91  87  88  84  87  79
+ 24092 Estevan, Sask               85  70  72  71  73  77  77  65  70  66  88  67
+ 24288 Abbotsford, BC              87  71  60  71  73  60  80  88  68  89  86  81
+ 24292 Comox, BC                   73  66  66  84  70  88  88  88  68  85  60  75
+ 24297 Victoria, BC                70  60  66  84  82  60  80  66  68  89  72  81
+ 25004 The Pas, Man                85  86  88  75  88  80  74  90  91  85  79  85
+ 25005 Regina, Sask                88  61  72  71  60  89  80  79  73  71  88  88
+ 25012 North Battleford, Sask      88  74  82  83  89  89  83  79  88  82  63  75
+ 25015 Saskatoon, Sask             85  70  82  72  66  83  80  88  73  82  63  75
+ 25028 Swift Current, Sask         88  71  76  63  73  73  76  60  73  73  88  88
+ 25105 Fort McMurray, Alta         73  71  76  75  86  77  81  73  71  74  64  65
+ 25110 Calgary, Alta               88  80  70  63  63  62  88  79  74  89  63  63
+ 25118 Medicine Hat, Alta          67  80  85  64  89  80  77  73  73  73  64  65
+ 25145 Edmonton, Alta              75  71  77  90  91  89  81  73  71  76  78  76
+ 25206 Prince George, BC           88  76  77  74  88  77  86  89  82  81  74  82
+ 25220 Kamloops, BC                88  71  80  85  88  88  87  84  81  85  71  80
+ 25223 Port Hardy, BC              73  85  80  91  86  77  84  68  83  83  74  87
+ 25225 Smithers, BC                62  60  60  74  82  66  75  72  62  70  63  67
+ 25231 Fort St John, BC            75  74  80  73  69  67  88  84  70  77  60  62
+ 25346 Sandspit, BC                82  68  68  70  91  81  69  88  88  77  89  85
+ 25353 Prince Rupert, BC           70  71  80  73  67  63  63  68  80  82  63  78
+ 26110 Yellowknife, NWT            86  75  78  73  70  72  65  73  81  65  69  63
+ 26316 Whitehorse, YT              86  81  80  87  77  72  85  87  77  83  71  76
+ 73715 La Grande Riviere, Que      83  86  79  77  78  77  89  86  88  89  87  77
+ 75290 Montreal Mirabel, Que       77  83  80  79  81  81  84  81  79  86  83  83
+ 77912 Sept-Iles, Que              92  75  80  89  87  81  78  75  84  73  75  82
+ 94108 Lethbridge, Alta            62  85  77  84  89  62  79  88  80  82  67  88
+ 94152 Summerland, BC              66  65  67  76  88  78  77  66  88  82  68  82
+ 94238 Vancouver, BC               70  67  66  76  71  60  67  79  61  85  70  61
+ 94792 Montreal Int'l., Que        66  70  61  79  71  70  77  78  79  86  84  78
+ 94795 Bagotville, Que             75  64  68  70  65  87  78  86  65  85  67  71
+ 94804 Thunder Bay, Ont            84  64  82  83  87  60  84  63  81  65  74  62
+ 94805 London, Ont                 62  88  89  88  63  70  81  66  80  83  69  75
+ 94810 Windsor, Ont                65  77  89  63  63  62  73  56  72  83  79  73
+ 94842 Sault Ste Marie, Ont        65  71  67  70  85  74  82  62  73  83  71  75
+ 94857 Mount Forest, Ont           66  70  64  62  69  62  74  62  69  68  69  64
+ 94858 Simcoe, Ont                 62  73  62  71  63  62  71  66  66  69  65  64
+ CAN06 Battle Harbour, NFLD        78  63  75  70  67  78  77  77  63  80  73  64
+ CAN07 Lake Eon, Que               70  64  70  65  65  69  64  71  65  73  70  74
+ CAN12 Riviere du Loup, Que        78  70  75  71  68  70  66  70  77  73  70  67
+ CAN13 Grindstone Island, Que      76  71  77  69  69  81  72  75  77  69  75  77
+ CAN15 Kingston, Ont               91  89  74  71  70  77  77  91  92  91  73  77
+
