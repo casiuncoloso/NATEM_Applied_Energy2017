@@ -25,4 +25,7 @@ made available by the Pan-Canadian study of wind power potential
 **Estimating AF of hydropower - reservoir and runoff** Estimation of AF of
 hydropower plants in Quebec.
 
+**Comparing heating demand of different cities** Comparison of monthly heating
+demand for the most populated cities in Quebec.
+ 
 it also contains most of the underlying data required to run the notebooks.
