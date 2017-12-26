@@ -1,6 +1,8 @@
 # NATEM_Applied_Energy2017
 supplementary material regarding the analysis of heating options for Quebec
-using a TIMES model
+using a TIMES model [![DOI](https://zenodo.org/badge/93194964.svg)](https://zenodo.org/badge/latestdoi/93194964)
+
+
 
 the repository includes several jupyter notebooks used in the [article](http://www.sciencedirect.com/science/article/pii/S0306261917310036?via%3Dihub):
 
