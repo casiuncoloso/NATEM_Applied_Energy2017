@@ -2,9 +2,9 @@
 supplementary material regarding the analysis of heating options for Quebec
 using a TIMES model
 
-the repository includes several jupyter notebooks used in the article:
+the repository includes several jupyter notebooks used in the [article](http://www.sciencedirect.com/science/article/pii/S0306261917310036?via%3Dihub):
 
-Can the household sector reduce global warming mitigation costs? Sensitivity to key parameters in a TIMES techno-economic energy model (submitted to Applied Energy)
+Astudillo, M.F., Vaillancourt, K., Pineau, P.-O., Amor, B., 2017. Can the household sector reduce global warming mitigation costs? sensitivity to key parameters in a TIMES techno-economic energy model. Appl. Energy 205, 486–498. https://doi.org/10.1016/j.apenergy.2017.07.130
 
 The repository contains:
 
